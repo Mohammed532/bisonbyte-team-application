@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BisonBytes Invitation</title>
+    <!-- DaisyUI and TailwindCSS (would normally use npm for efficiency, cdn used for ease of judging) -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {},
+            },
+            plugins: [require('daisyui')],
+            daisyui: {
+                themes: ['night'],
+            },
+        };
+    </script>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen relative">
+    <!-- Title -->
+    <div id="motion-title" class="text-5xl font-extrabold text-white mb-6">BisonBytes</div>
+
+    <!-- Invitation Card -->
+    <div class="card w-96 bg-gray-800 shadow-lg border border-gray-700" id="fade-in">
+        <div class="card-body text-center text-white py-3">
+            <p>📍 <span class="font-medium">Howard University, CEA Building</span></p>
+            <p>📅 <span class="font-medium">March 30th, 2025</span></p>
+            <p>⏰ <span class="font-medium">12:00 PM</span></p>
+        </div>
+    </div>
+
+    <!-- Button -->
+    <div class="w-96 mt-5" id="fade-in">
+        <a href="https://bisonbytes.org" class="btn btn-primary w-full text-lg text-white font-bold">RSVP Now</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="absolute bottom-5">
+        <p>Made By 
+            <a href="https://mohammed532.github.io/" class="link">Mohammed Akinbayo</a>
+        </p>
+    </footer>
+
+    <!-- Animation Script (also installed using cdn linked for ease of judging)-->
+    <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
+    <script>
+        const { animate, scroll } = Motion;
+
+        // title animation
+        animate("#motion-title", {
+            scale: [0.9, 1],
+        }, {
+            duration: 0.5,
+            repeat: Infinity,
+            repeatType: "reverse",
+        });
+
+        // fade-in animation
+        animate("#fade-in", {
+            opacity: [0, 1],
+            scale: [0.8, 1]
+        }, {
+            duration: 1.0,
+        });
+    </script>
+</body>
+</html>
